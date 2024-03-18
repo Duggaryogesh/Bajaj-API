@@ -3,12 +3,15 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-
+app.get('/',(req,res)=>{
+    const temp="working"
+    res.json(temp);
+});
 app.post('/bfhl', (req, res) => {
 const arr = req.body.data;
 console.log(arr);
 
-const user = "yogesh_duggar_12";
+const user = "yogesh_duggar_12072003";
 
 const alphabets = arr.filter(ch => /[a-zA-Z]/.test(ch)).map(ch => ch.toUpperCase());
 const oddArr = arr.filter(item => item % 2 !== 0);
